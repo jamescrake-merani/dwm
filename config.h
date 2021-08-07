@@ -70,6 +70,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = { "librewolf", NULL };
 static const char *emacscmd[] = { "emacs", NULL };
+static const char *passmenucmd[] = { "passmenu", NULL };
 
 /*media stuff*/
 static const char *upvol[]   = { "/usr/bin/pulsemixer", "--change-volume", "5",     NULL };
@@ -79,6 +80,7 @@ static const char *mutevol[] = { "/usr/bin/pulsemixer", "--toggle-mute",        
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = passmenucmd} },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = emacscmd } },
